@@ -2,25 +2,38 @@
 
 We will see how to develop a quick REST endpoint and deploy it on AWS Lambda with the serverless framework
 
+https://github.com/ooga/serverless-kata
+
 ## Installation
 
 `$ npm install -g serverless`
 
 ### Quick look
 
+- What is serverless framework ?
+
 - Config
 
 - Status code https://serverless.com/framework/docs/providers/aws/events/apigateway#status-codes
-
-- What is serverless framework ?
 
 ## Steps
 
 ### AWS config
 
-- Create an AWS user
-- add a named user on aws-cli
+- Create an AWS user following this steps https://serverless.com/framework/docs/providers/aws/guide/credentials#creating-aws-access-keys
+- add a named profile on `~/.aws/credentials`
+
+  ```
+  [kata]
+  aws_access_key_id = XXXXXXXXXX
+  aws_secret_access_key = xxXXXxxXXxXxXXXXxxx
+  ```
+
 - add profile in your serverless config
+  ```
+  provider:
+    profile: kata
+  ```
 
 ### First deploy
 
